@@ -1,0 +1,39 @@
+[
+  {
+    "question": "Which OSI layer is responsible for routing packets across network boundaries?",
+    "options": [
+      "Data Link",
+      "Network",
+      "Transport",
+      "Application"
+    ],
+    "correct": [
+      1
+    ]
+  },
+  {
+    "question": "Which device typically operates at Layer 1 of the OSI model?",
+    "options": [
+      "Router",
+      "Switch",
+      "Repeater",
+      "Firewall"
+    ],
+    "correct": [
+      2
+    ]
+  },
+  {
+    "question": "Which two protocols operate at the Transport Layer? (Select 2)",
+    "options": [
+      "UDP",
+      "IP",
+      "ARP",
+      "TCP"
+    ],
+    "correct": [
+      0,
+      3
+    ]
+  }
+]

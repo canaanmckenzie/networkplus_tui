@@ -6,17 +6,14 @@ mod ui;
 
 //import applications state 'app' and 'question' struct from app module
 use app::App;
-
 //crossterm provides terminal control and input handling on windows/macos/linux
 use crossterm::{
     event::{self, DisableMouseCapture, EnableMouseCapture, Event, KeyCode},
     execute,
     terminal::{self, EnterAlternateScreen, LeaveAlternateScreen},
 };
-
 //Ratatui is used to render the terminal UI widgets
 use ratatui::{Terminal, backend::CrosstermBackend};
-
 use std::io::{self, stdout}; //used for interacting with terminal output
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
@@ -46,10 +43,13 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
             if let Event::Key(key) = event::read()? {
                 match key.code {
                     KeyCode::Char('q') => break,
+                    KeyCode::Char('n') => app.next_question(),
                     KeyCode::Down => app.next_option(), //down arrow - move to next choice
                     KeyCode::Up => app.previous_option(), //up arrow - move to previous choice
                     KeyCode::Enter => app.check_answer(), //enter key - mark selected answer
-                    _ => {}                             //ignore other keys
+                    KeyCode::Char('s') => app.save_progress(),
+                    KeyCode::Char('r') => app.reset_progress(),
+                    _ => {} //ignore other keys
                 }
             }
         }
