@@ -5,7 +5,7 @@ mod app;
 mod ui;
 
 //import applications state 'app' and 'question' struct from app module
-use app::{App, Question};
+use app::App;
 
 //crossterm provides terminal control and input handling on windows/macos/linux
 use crossterm::{
